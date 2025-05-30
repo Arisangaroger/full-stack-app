@@ -20,7 +20,7 @@ app.use(express.json())
 app.use(cookieParser())
 
 
-dotenv.config()
+
 
 app.use('/api/auth', authRoute);
 app.use('/api/message', messageRoute)
