@@ -26,9 +26,9 @@ app.use('/api/auth', authRoute);
 app.use('/api/message', messageRoute)
 
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static(path.resolve(_dirname, "../frontend/dist")))
-  app.get("*", (req,res)=>{
-    res.sendFile(path.resolve(_dirname, "../frontend", "dist", "index.html"))
+  app.use(express.static(path.join(_dirname, "../frontend/dist")))
+  app.get("/*", (req,res)=>{
+    res.sendFile(path.join(_dirname, "../frontend", "dist", "index.html"))
   })
 }
 
